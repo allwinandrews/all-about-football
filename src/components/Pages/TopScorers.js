@@ -64,7 +64,7 @@ export default function TopScorers() {
                         theme.palette.mode === "dark" ? "#1A2027" : "#fff",
                     }}
                   >
-                    <img
+                     <img
                       style={{
                         display: "block",
                         marginLeft: "auto",
