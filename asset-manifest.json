@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/allaboutfootball/static/css/main.073c9b0a.css",
-    "main.js": "/allaboutfootball/static/js/main.71b0bb92.js",
+    "main.css": "/allaboutfootball/static/css/main.eaef48d6.css",
+    "main.js": "/allaboutfootball/static/js/main.934f2d5d.js",
     "static/js/787.9df4435c.chunk.js": "/allaboutfootball/static/js/787.9df4435c.chunk.js",
-    "static/media/logo.svg": "/allaboutfootball/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/allaboutfootball/index.html",
-    "main.073c9b0a.css.map": "/allaboutfootball/static/css/main.073c9b0a.css.map",
-    "main.71b0bb92.js.map": "/allaboutfootball/static/js/main.71b0bb92.js.map",
+    "main.eaef48d6.css.map": "/allaboutfootball/static/css/main.eaef48d6.css.map",
+    "main.934f2d5d.js.map": "/allaboutfootball/static/js/main.934f2d5d.js.map",
     "787.9df4435c.chunk.js.map": "/allaboutfootball/static/js/787.9df4435c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.71b0bb92.js"
+    "static/css/main.eaef48d6.css",
+    "static/js/main.934f2d5d.js"
   ]
 }
