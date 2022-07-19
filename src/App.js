@@ -5,6 +5,7 @@ import {
   Route,
   Navigate,
   useLocation,
+  Link,
 } from "react-router-dom";
 
 // mui
@@ -23,8 +24,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import StarIcon from "@mui/icons-material/Star";
 import { useTheme } from "@mui/material/styles";
 
 // Pages
@@ -40,10 +40,10 @@ export default function App() {
   const theme = useTheme();
   const { pathname } = useLocation();
 
-  const getHeader = useCallback(
-    () => getCapitalizedLabelAndRemoveSymbols(pathname),
-    [pathname]
-  );
+  // const getHeader = useCallback(
+  //   () => getCapitalizedLabelAndRemoveSymbols(pathname),
+  //   [pathname]
+  // );
 
   const [open, setOpen] = useState(false);
 
@@ -73,7 +73,7 @@ export default function App() {
                 <MenuIcon />
               </IconButton>
               <Typography variant="h6" noWrap component="div">
-                {getHeader(pathname)}
+                {getCapitalizedLabelAndRemoveSymbols(pathname)}
               </Typography>
             </Toolbar>
           </AppBar>
@@ -101,21 +101,25 @@ export default function App() {
             </DrawerHeader>
             <Divider />
             <List>
-              {["Inbox", "Starred", "Send email", "Drafts"].map(
-                (text, index) => (
-                  <ListItem key={text} disablePadding>
+              {[{ path: "top-scorers", icon: <StarIcon /> }].map(
+                (item, index) => (
+                  <ListItem key={item.path} disablePadding>
                     <ListItemButton>
-                      <ListItemIcon>
-                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                      </ListItemIcon>
-                      <ListItemText primary={text} />
+                      <Link to={`/${item.path}`}>
+                        <ListItemIcon>{item.icon}</ListItemIcon>
+                        <ListItemText
+                          primary={getCapitalizedLabelAndRemoveSymbols(
+                            item.path
+                          )}
+                        />
+                      </Link>
                     </ListItemButton>
                   </ListItem>
                 )
               )}
             </List>
             <Divider />
-            <List>
+            {/* <List>
               {["All mail", "Trash", "Spam"].map((text, index) => (
                 <ListItem key={text} disablePadding>
                   <ListItemButton>
@@ -126,12 +130,17 @@ export default function App() {
                   </ListItemButton>
                 </ListItem>
               ))}
-            </List>
+            </List> */}
           </Drawer>
           <Routes>
             <Route
               exact
               path="/"
+              element={<Navigate to="/top-scorers" replace />}
+            />
+            <Route
+              exact
+              path="/allaboutfootball"
               element={<Navigate to="/top-scorers" replace />}
             />
             <Route exact path="/top-scorers" element={<TopScorers />} />
