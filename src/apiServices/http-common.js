@@ -25,7 +25,7 @@ const HTTP = axios.create({
   // timeout: 600000
   headers: {
     "X-RapidAPI-Key": "FAKE",
-    // "X-RapidAPI-Key": "3503b5dc1fmsh4fbe269a0a24b51p1e8433jsnb009d1fcd530",
+    // "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
     "X-RapidAPI-Host": "api-football-beta.p.rapidapi.com",
   },
 });
